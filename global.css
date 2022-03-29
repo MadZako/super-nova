@@ -9,7 +9,18 @@ body{
 p{
     font-size: 30px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-decoration: none;
 }
+
+/* .name:hover{
+    text-decoration: underline;
+} */
+
+#learnmore{
+    font-size: 20px;
+    font-weight: 700;
+}
+
  main{
      display: flex;
  }
@@ -22,6 +33,12 @@ p{
 
 .planet{
     flex: 1;
+    overflow: hidden;
+}
+
+.planet:hover{
+    transform: scale(1.6);
+    transition: 0.5s;
 }
 
 img{
@@ -31,14 +48,8 @@ img{
     aspect-ratio: 1/1;
     object-fit: cover;
 }
-/* #mercury{
-    position: relative;
-    bottom: 0px;
-    left: 250px;
-}
 
-#venus{
-    position: relative;
-    height: 50px;
-    width: 50px;
-} */
+
+#saturn{
+    object-fit: contain;
+}
