@@ -34,7 +34,7 @@ function neptune(){
     window.open("https://solarsystem.nasa.gov/planets/neptune/overview/")
 }
 
-// function pluto(){
-//     window.open("https://solarsystem.nasa.gov/planets/dwarf-planets/pluto/overview/")
-// }
+function pluto(){
+    window.open("https://solarsystem.nasa.gov/planets/dwarf-planets/pluto/overview/")
+}
 
