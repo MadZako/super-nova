@@ -4,6 +4,7 @@
   "description": "group project",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/MadZako/super-nova/issues"
   },
-  "homepage": "https://github.com/MadZako/super-nova#readme"
+  "homepage": "https://github.com/MadZako/super-nova#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "three": "^0.139.0"
+  }
 }
