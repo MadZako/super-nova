@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: block;
+    font-family: 'Lobster', cursive;
+    color: aliceblue;
+    font-size: 50px;
+    text-align: center;   
+    background-image: url(https://www.popsci.com/uploads/2021/06/01/milky-way-2695569_1920.jpg?auto=webp&width=1440&height=809.25);
+}
+
+a {
+	font-size: 12px;
+	text-transform: uppercase;
+    z-index: 100;
+
+}
+
+.nav-area {
+	background: #262626;
+    font-family: 'San Francisco', Helvetica, Arial, san-serif;
+}
+.nav-area:after {
+	content: '';
+	clear: both;
+	display: block;
+  z-index: 90;
+}
+.nav-area ul {
+	list-style: none;
+	margin: 0;
+}
+.nav-area>ul>li {
+	float: left;
+	position: relative;
+  z-index: 90;
+}
+.nav-area ul li a {
+	text-decoration: none;
+	color: rgb(177, 162, 162);
+	padding: 15px 20px;
+	display: block;
+}
+.nav-area ul li:hover a {
+	background: #34495e;
+}
+.nav-area ul ul {
+	position: absolute;
+	padding: 0;
+	min-width: 160px;
+	display: none;
+	top: 100%;
+	left: 0;
+}
+.nav-area ul li:hover>ul {
+	display: block;
+}
+.nav-area ul ul li:hover a {
+	background: #262626;
+}
+.nav-area ul ul li {
+	position: relative;
+}
+.nav-area ul ul ul {
+	top: 0;
+	left: 100%;
+}
+.nav-area ul ul ul li:hover a {
+	background: #34495e;
+}
+
+p{
+    font-size: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-decoration: none;
+}
+
+/* .name:hover{
+    text-decoration: underline;
+} */
+
+
+
+ main{
+     display: flex;
+    
+ }
+
+#sun, #mercury, #venus{
+    position:relative;
+    width:100%;
+    height: 300px;
+}
+
+.planet{
+    flex: 1;
+    overflow: hidden;
+}
+
+.planet:hover{
+    transform: scale(1.6);
+    transition: 0.5s;
+}
+
+img{
+    display: block;
+    width:100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+
+#saturn{
+    object-fit: contain;
+}
+
+.text a {
+    font-family: 'San Francisco', Helvetica, Arial, san-serif;
+    display: inline-block;
+    size-adjust: 10px;
+    font-size: 12px;
+    background: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    color: #111;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+.text a:hover {
+    letter-spacing: 6px;
+}
+
+@media screen and (max-device-width:640px), screen and (max-width:640px) {
+    .allPlanets {
+    Width: 100%!important;
+    }
+    }

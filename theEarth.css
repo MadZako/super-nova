@@ -33,7 +33,7 @@ a {
 }
 .nav-area ul li a {
 	text-decoration: none;
-	color: #fff;
+	color: rgb(177, 162, 162);
 	padding: 15px 20px;
 	display: block;
 }
@@ -112,8 +112,8 @@ a {
 .text h2
 {
   font-size: 5em;
-  font-weight: 800;
-  color: #fff;
+  font-weight: 400;
+  color: rgb(189, 182, 216);
   line-height: 1em;
   text-transform: uppercase;
 }
@@ -129,13 +129,13 @@ a {
 {
   display: inline-block;
   font-size: 1em;
-  background: #fff;
+  background: rgb(26, 23, 23);
   padding: 10px 30px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
   margin-top: 10px;
-  color: #111;
+  color: rgb(173, 154, 154);
   letter-spacing: 2px;
   transition: 0.2s;
 }
@@ -143,6 +143,7 @@ a {
 {
   letter-spacing: 6px;
 }
+
 .social
 {
   position: absolute;

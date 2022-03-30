@@ -38,7 +38,7 @@ a {
 }
 .nav-area ul li a {
 	text-decoration: none;
-	color: #fff;
+	color: rgb(177, 162, 162);
 	padding: 15px 20px;
 	display: block;
 }

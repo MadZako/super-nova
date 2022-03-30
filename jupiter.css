@@ -33,7 +33,7 @@
   }
   .nav-area ul li a {
       text-decoration: none;
-      color: #fff;
+      color: rgb(177, 162, 162);
       padding: 15px 20px;
       display: block;
   }
@@ -112,8 +112,8 @@
   .text h2
   {
     font-size: 5em;
-    font-weight: 800;
-    color: #fff;
+    font-weight: 400;
+    color: rgb(252, 252, 252);
     line-height: 1em;
     text-transform: uppercase;
   }
@@ -129,7 +129,7 @@
   {
     display: inline-block;
     font-size: 1em;
-    background: #fff;
+    background: rgb(233, 235, 165);
     padding: 10px 30px;
     text-transform: uppercase;
     text-decoration: none;
