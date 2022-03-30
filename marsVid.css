@@ -3,11 +3,15 @@
     padding: 0;
     font-family: 'San Francisco', Helvetica, Arial, san-serif;
     box-sizing: border-box;
-    background-image: url(https://www.nlspacecampus.eu/cache/3/1920x1080/mob-shutterstock-481251031-20210610135721_1920x1080.jpg);
   }
-  
-  
-  a {
+
+body {
+    background-image: url(https://cdn.mos.cms.futurecdn.net/GY9JBbrzsGsz2psUv6pgdV-1024-80.jpg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black; 
+} 
+a {
     font-size: 12px;
 	text-transform: uppercase;
     z-index: 100;
