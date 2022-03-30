@@ -1,7 +1,8 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Car, Rocket } from './three-elements.js';
 
-let camera, scene, renderer, vroom, spaceX;
+let camera, scene, renderer, vroom, spaceX, controls;
 
 function createWall() {
 	let wall = new THREE.PlaneGeometry(50, 50, 1, 1);
@@ -24,100 +25,69 @@ function init() {
 	camera.position.set(10, 10, 40);
 	camera.lookAt(0,0,0);
 
+	const spotLight = new THREE.SpotLight( 0xffffff );
+	spotLight.position.set( 10, 10, 10 );
+
+	spotLight.castShadow = true;
+
+	spotLight.shadow.mapSize.width = 1024;
+	spotLight.shadow.mapSize.height = 1024;
+
+	spotLight.shadow.camera.near = 500;
+	spotLight.shadow.camera.far = 4000;
+	spotLight.shadow.camera.fov = 30;
+
+	scene.add( spotLight );
+
+	
+	const light = new THREE.AmbientLight( 0x404040, 2 ); // soft white light
+	scene.add( light );
+	
 	renderer = new THREE.WebGLRenderer({ antialias: true });
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.body.appendChild(renderer.domElement);
+	
+	controls = new OrbitControls( camera, renderer.domElement );
 
-	// let floor = new THREE.PlaneGeometry(50, 50);
-	// let floorMaterial = new THREE.MeshBasicMaterial({ color: 0x009A17, side: THREE.DoubleSide});
-	// let floorElement = new THREE.Mesh( floor, floorMaterial);
-	// floorElement.rotation.x += 90;
-	// // scene.add(floorElement);
-	// let newWall = createWall();
-	// newWall.position.y = 25;
-	// newWall.position.z = -25;
-	// // scene.add(newWall);
+	let plane = new THREE.Mesh(
+		new THREE.PlaneBufferGeometry(2000, 2000, 200, 200),
+		new THREE.MeshStandardMaterial({
+			// color: '#7CFC00',
+			wireframe: true,
+			side: THREE.DoubleSide
+		})
+	);
 
-	// let crr = new Car();
+	let cage = new THREE.Mesh(
+		new THREE.BoxBufferGeometry(100,100,100,200,200),
+		new THREE.MeshStandardMaterial({
+			color: 0x87ceeb,
+			wireframe: true,
+			side: THREE.DoubleSide
+		})
+	);
+	cage.position.y = cage.geometry.parameters.height / 2;
+
+	scene.add(cage);
+
+	plane.rotateX( - Math.PI / 2);
+	// scene.add(plane);
+
+	vroom = new Car();
 	spaceX = new Rocket();
-	// crr.rotateFrontWheels('Right');
-	// scene.add(crr.car);
-	spaceX.yabba();
+	scene.add(vroom.car);
 	scene.add(spaceX.ship);
-	// vroom = makeCar();
-	// scene.add(vroom);
 
-
-}
-
-function makeCar() {
-	let test = new THREE.Group();
-
-	let frL = new THREE.Mesh(
-		new THREE.BoxGeometry(1, 2, 2),
-		new THREE.MeshBasicMaterial({ color: 0x28282B })
-	);
-	frL.name = 'FrontLeft';
-	frL.position.y = 1;
-	frL.position.x = -2;
-	frL.position.z = -4;	
-	let frR = new THREE.Mesh(
-		new THREE.BoxGeometry(1, 2, 2),
-		new THREE.MeshBasicMaterial({ color: 0x28282B })
-	);
-	frR.name = 'FrontRight';
-	frR.position.y = 1;
-	frR.position.x = 2;
-	frR.position.z = -4;
-
-	let reL = new THREE.Mesh(
-		new THREE.BoxGeometry(1, 2, 2),
-		new THREE.MeshBasicMaterial({ color: 0x28282B })
-	);
-	reL.name = 'RearLeft';
-	reL.position.y = 1;
-	reL.position.x = -2;
-	reL.position.z = 4;
-	let reR = new THREE.Mesh(
-		new THREE.BoxGeometry(1, 2, 2),
-		new THREE.MeshBasicMaterial({ color: 0x28282B })
-	);
-	reR.name = 'RearRight';
-	reR.position.y = 1;
-	reR.position.x = 2;
-	reR.position.z = 4;
-
-	let carBody = new THREE.Mesh(
-		new THREE.BoxGeometry(4,3,12),
-		new THREE.MeshBasicMaterial({ color: 0xEB7A08 }),
-	);
-	carBody.name = 'CarBody';
-	carBody.position.y = 2;
-	
-	let carHead = new THREE.Mesh(
-		new THREE.BoxGeometry(4,1.5,6),
-		new THREE.MeshBasicMaterial({ color: 0xA5A0A0 }),
-	);
-	carHead.name = 'CarHead';
-	carHead.position.y = 4.25;
-	carHead.position.z = 1;
-
-
-	test.add(frL);
-	test.add(frR);
-	test.add(reL);
-	test.add(reR);
-	test.add(carBody);
-	test.add(carHead);
-	
-	return test;
+	controls.update();
 }
 
 function animate() {
 	requestAnimationFrame(animate);
+	controls.update();
 
-	spaceX.yabba();
-	// object.position.z -= 0.05;
+	// spaceX.spin();
+	// spaceX.flyUp();
+	// camera.lookAt(spaceX.ship.position);
 
 	renderer.render(scene, camera);
 }
@@ -126,9 +96,14 @@ let keysPressed = {};
 
 document.addEventListener('keydown', (event) => {
   keysPressed[event.code] = true;
-	console.log(keysPressed);
-	// moveCamera(keysPressed);
-	// complexCarMovement(keysPressed);
+	if (event.code === 'Space' || event.code === 'ArrowUp') {
+		spaceX.flyUp(true, true);
+	}
+	if (event.code === 'ArrowDown') {
+		spaceX.flyDown();
+	}
+
+	complexCarMovement(keysPressed);
 });
 
 document.addEventListener('keyup', (event) => {
@@ -142,58 +117,27 @@ function cameraLookAtObject(object) {
 function moveCameraRelativeToObject(object) {
 	let { x, y, z } = object.position;
 	camera.position.set((x + 20), (y + 20), (z + 70));
-}
-
-function moveCamera(keys) {
-	if (keys.w) {
-		camera.position.z -= 1;
-	} else if (keys.s) {
-		camera.position.z += 1;
-	} else if (keys.a) {
-		camera.position.x -= 1;
-	} else if (keys.d) {
-		camera.position.x += 1;
-	}
-	// cameraLookAtObject(vroom);
-
 	renderer.render(scene, camera);
+
 }
 
 function complexCarMovement(keys) {
-	if (keys) {
-		spaceX.flyUp();
-	}
 	if (!(keys.ArrowRight || keys.ArrowLeft || keys.ArrowDown || keys.ArrowUp)) return;
-	// let right = vroom.children.find(mesh => mesh.name === 'FrontRight');
-	// let left = vroom.children.find(mesh => mesh.name === 'FrontLeft');
 	if (keys.ArrowRight && keys.ArrowUp) {
-		right.rotation.y = -1;
-		left.rotation.y = -1;
-		vroom.rotation.y += -0.1;
-		vroom.position.z -= 1;
+		vroom.moveRight();
 	} else if (keys.ArrowLeft && keys.ArrowUp) {
-		right.rotation.y = 1;
-		left.rotation.y = 1;
-		vroom.rotation.y -= -0.1;
-		vroom.position.z -= 1;
+		vroom.moveLeft();
 	} else if (keys.ArrowRight) {
-		right.rotation.y = -1;
-		left.rotation.y = -1;
+		vroom.rotateFrontWheels('Right');
 	} else if (keys.ArrowLeft) {
-		right.rotation.y = 1;
-		left.rotation.y = 1;
+		vroom.rotateFrontWheels('Left');
 	} else if (keys.ArrowUp) {
-		spaceX.removeFlames();
-		// right.rotation.y = 0;
-		// left.rotation.y = 0;
-		// vroom.position.z -= 1;
+		vroom.moveForward();
 	} else if (keys.ArrowDown) {
-		right.rotation.y = 0;
-		left.rotation.y = 0;
-		vroom.position.z += 1;
+		vroom.moveBackward();
 	}
-	cameraLookAtObject(vroom);
-	moveCameraRelativeToObject(vroom);
+	cameraLookAtObject(vroom.car);
+	moveCameraRelativeToObject(vroom.car);
 	renderer.render(scene, camera);
 }
 
