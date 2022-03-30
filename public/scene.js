@@ -1,7 +1,8 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Car, Rocket } from './three-elements.js';
 
-let camera, scene, renderer, vroom, spaceX;
+let camera, scene, renderer, vroom, spaceX, controls;
 
 function createWall() {
 	let wall = new THREE.PlaneGeometry(50, 50, 1, 1);
@@ -38,15 +39,15 @@ function init() {
 
 	scene.add( spotLight );
 
-
-
+	
 	const light = new THREE.AmbientLight( 0x404040, 2 ); // soft white light
 	scene.add( light );
-
+	
 	renderer = new THREE.WebGLRenderer({ antialias: true });
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.body.appendChild(renderer.domElement);
-
+	
+	controls = new OrbitControls( camera, renderer.domElement );
 
 	let plane = new THREE.Mesh(
 		new THREE.PlaneBufferGeometry(2000, 2000, 200, 200),
@@ -76,10 +77,13 @@ function init() {
 	spaceX = new Rocket();
 	scene.add(vroom.car);
 	scene.add(spaceX.ship);
+
+	controls.update();
 }
 
 function animate() {
 	requestAnimationFrame(animate);
+	controls.update();
 
 	// spaceX.spin();
 	// spaceX.flyUp();
