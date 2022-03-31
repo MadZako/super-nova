@@ -74,7 +74,7 @@
     padding-bottom: 30px;
 }
 
-.band-name {
+.shop-name {
     text-align: center;
     margin: 0;
     font-size: 4em;
@@ -83,7 +83,7 @@
     color: rgb(145, 128, 150);
 }
 
-.band-name-large {
+.shop-name-large {
     font-size: 8em;
 }
 
