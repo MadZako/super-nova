@@ -59,15 +59,31 @@
 			</li>
 		</ul>
 	</nav>
-    <main>
-        <p class="textC">WE'D LOVE TO HEAR FROM YOU!</p>
-        <form class="contact-form" action="contactform.php" method="post">
-            <input type="text" name="name" placeholder="Full name">
-            <input type="text" name="mail" placeholder="Your e-mail">
-            <input type="text" name="subject" placeholder="Subject">
-            <textarea name="message" placeholder="Message"></textarea>
-            <button type="submit" name="submit">SEND MAIL</button>
-        </form>
-    </main>
+	
+	
+	
+	<div class="showcase">
+        <video src="contactForm.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+		<!-- <h3>WE'D LOVE TO HEAR FROM YOU!</h3> -->
+		<div class="container">
+			<form action="https://formsubmit.co/anastasia.ubaka@thebeansgroup.com" method="POST">
+				<label for="fname">First Name</label>
+				<input type="text" id="fname" name="firstname" placeholder="Your name..">
+				<label for="lname">Last Name</label>
+				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+				<label for="email">Email</label>
+				<input type="text" id="email" name="email" placeholder="Your email..">
+				<label for="subject">Subject</label>
+				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+        <ul class="social">
+            <li><a href="https://www.facebook.com/Cosmic-Cosmos-Discovery-966537300033178/?ref=py_c"><img src="facebookIcon.svg" alt="facebook" height="30cm"></a></li>
+            <li><a href="https://twitter.com/NASA"><img src="twitterIcon.svg" alt="twitter" height="30cm"></a></li>
+            <li><a href="https://www.instagram.com/intospace0/?hl=en"><img src="instagramIcon.svg" alt="instagram" height="30cm"></a></li>
+        </ul>
+    </div>
 </body>
 </html>
