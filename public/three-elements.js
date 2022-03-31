@@ -332,6 +332,6 @@ class Planet {
 	  }
 	  return this.mesh;
 	}
-  }
+}
 
 export { Car, Rocket, Planet };
