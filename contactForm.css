@@ -184,4 +184,5 @@
     height: 100%;
     background: #a54f35;
     mix-blend-mode: overlay;
+    z-index: -10;
   }
