@@ -4,6 +4,8 @@ body{
     font-size: 50px;
     text-align: center;   
     background-image: url(https://www.popsci.com/uploads/2021/06/01/milky-way-2695569_1920.jpg?auto=webp&width=1440&height=809.25);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 p{
@@ -53,3 +55,4 @@ img{
 #saturn{
     object-fit: contain;
 }
+
