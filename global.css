@@ -8,12 +8,14 @@
 
 body{
     display: block;
+
     font-family: 'Lobster', cursive;
     color: aliceblue;
     font-size: 50px;
     text-align: center;   
     background-image: url(https://www.popsci.com/uploads/2021/06/01/milky-way-2695569_1920.jpg?auto=webp&width=1440&height=809.25);
 }
+
 
 a {
 	font-size: 12px;
@@ -85,12 +87,14 @@ p{
     text-decoration: underline;
 } */
 
-
-
  main{
      display: flex;
+}
     
- }
+#learnmore{
+    font-size: 20px;
+    font-weight: 700;
+}
 
 #sun, #mercury, #venus{
     position:relative;
@@ -145,4 +149,3 @@ img{
     Width: 100%!important;
     }
 }
-
