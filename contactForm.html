@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="jupiterVid.css">
-    <title>Jupiter</title>
+    <link rel="stylesheet" href="contactForm.css">
+    <title>Contact</title>
 </head>
 <body>
     <nav class="nav-area">
@@ -59,12 +59,15 @@
 			</li>
 		</ul>
 	</nav>
-    <div class="vid">
-        <video src="https://res.cloudinary.com/dtpgi0zck/video/upload/q_auto/vc_vp9/v1/videos/Jupiter%20101.webm?_s=vp-1.5.1" controls autoplay></video>
-    </div>
-    <footer>
-        
-    </footer>
+    <main>
+        <p class="textC">WE'D LOVE TO HEAR FROM YOU!</p>
+        <form class="contact-form" action="contactform.php" method="post">
+            <input type="text" name="name" placeholder="Full name">
+            <input type="text" name="mail" placeholder="Your e-mail">
+            <input type="text" name="subject" placeholder="Subject">
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit" name="submit">SEND MAIL</button>
+        </form>
+    </main>
 </body>
 </html>
-

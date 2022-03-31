@@ -1,6 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 body{
@@ -123,12 +126,12 @@ img{
     display: inline-block;
     size-adjust: 10px;
     font-size: 12px;
-    background: #fff;
+    background: rgb(63, 105, 67);
     padding: 10px 30px;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 500;
-    color: #111;
+    color: rgb(207, 206, 206);
     letter-spacing: 2px;
     transition: 0.2s;
 }
@@ -136,8 +139,10 @@ img{
     letter-spacing: 6px;
 }
 
+
 @media screen and (max-device-width:640px), screen and (max-width:640px) {
     .allPlanets {
     Width: 100%!important;
     }
-    }
+}
+
