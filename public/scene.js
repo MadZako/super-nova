@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { Car, Rocket } from './three-elements.js';
+import { Car, Rocket, Planet } from './three-elements.js';
 
 let camera, scene, renderer, vroom, spaceX, controls;
 
