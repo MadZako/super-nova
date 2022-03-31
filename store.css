@@ -112,16 +112,18 @@
     border-radius: 50%;
 }
 
+footer {
+    margin-bottom: 0;
+}
 .main-footer {
     background-color: #30444b;
     color: rgb(41, 26, 26);
-    padding: .25em 0;
+    padding: 10px;
 }
 
 .main-footer-container {
     display: flex;
     align-items: center;
-    
 }
 
 .main-footer-container ul {
