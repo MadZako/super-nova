@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx parcel public/index.html",
+    "solar": "npx parcel public/three/solarSystem.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
