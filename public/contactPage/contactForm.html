@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contactForm.css">
+    <title>Contact</title>
+</head>
+<body>
+    <nav class="nav-area">
+		<ul>
+			<li>
+				<a href="../homepage/index.html">home</a>
+			</li>
+			<li>
+				<a href="#">About</a>
+			</li>
+			<li>
+				<a class="dropD" href="#">Planets</a>
+				<ul>
+					<li class="dd">
+						<a href="../sun/sun.html">The Sun</a>
+					</li>
+					<li class="dd">
+						<a href="../planets/mercury/mercury.html">Mercury</a>
+					</li>
+					<li class="dd">
+						<a href="../planets/venus/venus.html">Venus</a>
+					</li>
+					<li class="dd">
+						<a href="../planets/mars/mars.html">Earth</a>
+					</li>
+                    <li class="dd">
+						<a href="../planets/mars/mars.html">Mars</a>
+					</li>
+					<li class="dd">
+						<a href="../planets/jupiter/jupiter.html">Jupiter</a>
+					</li>
+					<li class="dd">
+						<a href="../planets/saturn/saturn.html">Saturn</a>
+					</li>
+					<li class="dd">
+						<a href="../planets/uranus/uranus.html">Uranus</a>
+					</li>
+                    <li class="dd">
+						<a href="../planets/neptune/neptune.html">Neptune</a>
+					</li>
+					<li class="dd">
+						<a href="../planets/pluto/pluto.html">Pluto</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="../store/store.html">Gallery | Shop</a>
+			</li>
+			<li>
+				<a href="contactForm.html">Contact</a>
+			</li>
+		</ul>
+	</nav>
+	
+	
+	
+	<div class="showcase">
+        <video src="../src/contactForm.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+		<!-- <h3>WE'D LOVE TO HEAR FROM YOU!</h3> -->
+		<div class="container">
+			<form action="https://formsubmit.co/4e380b63ead0135de77029b102f171ba" method="POST">
+				<label for="fname">First Name</label>
+				<input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+				<label for="lname">Last Name</label>
+				<input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+				<label for="email">Email</label>
+				<input type="text" id="email" name="email" placeholder="Your email.." required>
+				<a href="./thanks.html"><input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html"></a>
+				<label for="subject">Subject</label>
+				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+        <ul class="social">
+            <li><a href="https://www.facebook.com/Cosmic-Cosmos-Discovery-966537300033178/?ref=py_c"><img src="../src/icons/facebookIcon.svg" alt="facebook" height="30cm"></a></li>
+            <li><a href="https://twitter.com/NASA"><img src="../src/icons/twitterIcon.svg" alt="twitter" height="30cm"></a></li>
+            <li><a href="https://www.instagram.com/intospace0/?hl=en"><img src="../src/icons/instagramIcon.svg" alt="instagram" height="30cm"></a></li>
+        </ul>
+    </div>
+</body>
+</html>

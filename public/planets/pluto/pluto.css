@@ -90,22 +90,28 @@ body {
 
 .social
 {
-    position: absolute;
-    z-index: 10;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
 }
-
-.social li{
-    list-style: none;
-    padding: 10px;
+.social li
+{
+  list-style: none;
 }
-
-.social li a{
-    display: inline-block;
-    margin-right: 20px;
+.social li a
+{
+  display: inline-block;
+  margin-right: 20px;
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
 }
 
 
