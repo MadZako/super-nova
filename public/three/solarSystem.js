@@ -20,12 +20,12 @@ function init() {
 
 	// camera and controls
 	camera = new THREE.PerspectiveCamera(
-		40,
+		30,
 		window.innerWidth / window.innerHeight,
 		1,
 		1000
 	);
-	camera.position.set(10, 10, 40);
+	camera.position.set(140, 0, 50);  
 
 	controls = new OrbitControls( camera, renderer.domElement );
 
@@ -35,7 +35,7 @@ function init() {
 		space.add( axesHelper );
 		// environment
 		let cage = new THREE.Mesh(
-			new THREE.BoxBufferGeometry(100,100,100,200,200),
+			new THREE.BoxBufferGeometry(500,100,100,200,200),
 			new THREE.MeshStandardMaterial({
 				color: 0x87ceeb,
 				wireframe: true,
@@ -105,6 +105,9 @@ function init() {
 	//#endregion
 	
 	spaceX = new Rocket();
+	spaceX.ship.position.x = 140;
+	spaceX.ship.position.z = 20;
+	spaceX.ship.rotateZ( Math.PI / 2 )
 	space.add(spaceX.ship);
 	controls.target = spaceX.ship.position;
 	controls.update();
@@ -132,7 +135,7 @@ function animate() {
 
 document.addEventListener('keydown', (event) => {
 	if (event.code === 'Space' || event.code === 'ArrowUp') {
-		spaceX.flyUp(true, true);
+		spaceX.flyUp(false, false);
 	}
 	if (event.code === 'ArrowDown') {
 		spaceX.flyDown();
