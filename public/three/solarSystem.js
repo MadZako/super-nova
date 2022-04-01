@@ -82,7 +82,7 @@ function init() {
 	jupiterMesh = jupiter.getMesh();
 	space.add(jupiterMesh);
 	
-	saturn = new Planet(6, 75, new URL("threeSrc/saturn.webp", import.meta.url));
+	saturn = new Planet(6, 75, new URL("threeSrc/Saturn.webp", import.meta.url));
 	saturnMesh = saturn.getMesh();
 	space.add(saturnMesh);
 	
