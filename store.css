@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -78,7 +79,7 @@
     text-align: center;
     margin: 0;
     font-size: 4em;
-    font-family: 'San Francisco', Helvetica, Arial, san-serif;
+    
     font-weight: normal;
     color: rgb(145, 128, 150);
 }
@@ -97,22 +98,14 @@
     padding: 0 1.5em;
 }
 .section-header {
-    font-family: 'San Francisco', Helvetica, Arial, san-serif;
     font-weight: normal;
     color: #333;
     text-align: center;
     font-size: 2.5em;
 }
 
-.about-band-image {
-    float: left;
-    height: 200px;
-    width: 200px;
-    margin: 15px;
-    border-radius: 50%;
-}
 
-footer {
+/* footer {
     margin-bottom: 0;
 }
 .main-footer {
@@ -130,7 +123,7 @@ footer {
     flex-grow: 1;
     text-align: end;
 
-}
+} */
 
 .social li {
     padding: 0.5em;
@@ -158,6 +151,7 @@ footer {
     filter: invert(1);
     transform: scale(0.5);
     transition: 0.5s;
+    
   }
   .social li a:hover
   {
@@ -165,85 +159,22 @@ footer {
   }
 
 .btn {
-    text-align: center;
-    vertical-align: middle;
-    padding: .67em .67em;
-    cursor: pointer;
+  text-align: center;
+    /* vertical-align: middle; */
+  padding: .67em .67em;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 3px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.btn-header {
-    margin: .5em 15% 2em 15%;
-    color: white;
-    border: 2px solid #2D9CDB;
-    background-color: rgba(255, 255, 255, .1);
-    border-radius: 0;
-    font-size: 1.5em;
-    font-weight: lighter;
-    padding-left: 2em;
-    padding-right: 2em;
-}
-
-.btn-header:hover {
-    background-color: rgba(255, 255, 255, .3);
-}
-
-.btn-play {
-    display: block;
-    margin: 0 auto;
-    color: #2D9CDB;
-    font-size: 4em;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    padding: 0;
-    text-align: center;
-}
-
-.btn-primary {
-    
-    color: white;
-    background-color: #9b499e;
-    border: none;
-    border-radius: .3em;
-    font-weight: bold;
-}
 
 .btn-primary:hover {
     background-color: #1c052b;
 }
 
-.tour-row {
-    border-bottom: 1px solid black;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-}
-
-.tour-row:last-child {
-    border: none;
-}
-
-.tour-item {
-    display: inline-block;
-    padding-right: .5em;
-}
-
-.tour-date {
-    color: #555;
-    width: 11%;
-    font-weight: bold;
-}
-
-.tour-city {
-    width: 24%;
-}
-
-.tour-arena {
-    width: 42%;
-}
-
-.tour-btn {
-    max-width: 19%;
-}
 
 .shop-item {
     margin: 30px;
@@ -387,13 +318,6 @@ footer {
     font-size: 1.75em;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "San Francisco", Helvetica, Arial, san-serif;
-  box-sizing: border-box;
-}
-
 body {
   background-color: #e0cde0;
 }
@@ -461,13 +385,14 @@ a {
   padding-bottom: 30px;
 }
 
+
 .shop-name {
   text-align: center;
   margin: 0;
   font-size: 4em;
-  font-family: "San Francisco", Helvetica, Arial, san-serif;
+  font-family: 'Lobster', cursive;
   font-weight: normal;
-  color: rgb(145, 128, 150);
+  color: rgb(199, 192, 201);
 }
 
 .shop-name-large {
@@ -491,25 +416,20 @@ a {
   font-size: 2.5em;
 }
 
-.about-band-image {
-  float: left;
-  height: 200px;
-  width: 200px;
-  margin: 15px;
-  border-radius: 50%;
-}
 
 footer {
-  margin-bottom: 0;
+  position: fixed;
+  z-index: 100;
 }
 .main-footer {
   background-color: #30444b;
   color: rgb(41, 26, 26);
-  padding: 10px;
+  padding: 4px;
+  margin: auto;
 }
 
 .main-footer-container {
-  display: flex;
+  margin-top: 0%;
   align-items: center;
 }
 
@@ -531,9 +451,11 @@ footer {
   width: 20px;
   height: 20px;
 }
+
 .social li {
   list-style: none;
 }
+
 .social li a {
   display: inline-block;
   margin-right: 20px;
@@ -545,40 +467,6 @@ footer {
   transform: scale(0.5) translateY(-15px);
 }
 
-.btn {
-  text-align: center;
-  vertical-align: middle;
-  padding: 0.67em 0.67em;
-  cursor: pointer;
-}
-
-.btn-header {
-  margin: 0.5em 15% 2em 15%;
-  color: white;
-  border: 2px solid #2d9cdb;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0;
-  font-size: 1.5em;
-  font-weight: lighter;
-  padding-left: 2em;
-  padding-right: 2em;
-}
-
-.btn-header:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.btn-play {
-  display: block;
-  margin: 0 auto;
-  color: #2d9cdb;
-  font-size: 4em;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  padding: 0;
-  text-align: center;
-}
 
 .btn-primary {
   color: white;
@@ -590,39 +478,6 @@ footer {
 
 .btn-primary:hover {
   background-color: #1c052b;
-}
-
-.tour-row {
-  border-bottom: 1px solid black;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-}
-
-.tour-row:last-child {
-  border: none;
-}
-
-.tour-item {
-  display: inline-block;
-  padding-right: 0.5em;
-}
-
-.tour-date {
-  color: #555;
-  width: 11%;
-  font-weight: bold;
-}
-
-.tour-city {
-  width: 24%;
-}
-
-.tour-arena {
-  width: 42%;
-}
-
-.tour-btn {
-  max-width: 19%;
 }
 
 .shop-item {
@@ -640,9 +495,13 @@ footer {
 }
 
 .shop-item-image {
-  height: 250px;
+
   align-items: center;
   border-radius: 3px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: ;   */
 }
 
 .shop-item-details {
