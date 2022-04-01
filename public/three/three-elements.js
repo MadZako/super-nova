@@ -178,7 +178,7 @@ class Car {
 
 class Rocket {
 	ship;
-	speed = 0.05;
+	speed = 0.5;
 
 	constructor() {
 		this.ship = new THREE.Group();
@@ -299,18 +299,18 @@ class Rocket {
 		const targetPosition = this.ship.position.clone();
 		targetPosition.y += this.speed;
 
-		this.ship.position.lerp(targetPosition, 0.1)
+		// this.ship.position.lerp(targetPosition, 0.1)
 		this.ship.translateY(this.speed);
 	}
 
 	flyDown() {
 		this.removeFlames();
-		this.returnToCenter();
+		// this.returnToCenter();
 
 		const targetPosition = this.ship.position.clone();
 		targetPosition.y -= this.speed;
 
-		this.ship.position.lerp(targetPosition, 0.1)
+		// this.ship.position.lerp(targetPosition, 0.1)
 		this.ship.translateY(-this.speed);
 	}
 }
